@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>اختيار الجهاز</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      background: #111;
+      color: white;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 25px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    canvas {
+      display: none;
+      border: 1px solid white;
+    }
+  </style>
+</head>
+<body>
+
+<h1>اختر جهازك</h1>
+
+<div id="menu">
+  <button onclick="startGame('mobile')">📱 جوال</button>
+  <button onclick="startGame('tablet')">📱 آيباد</button>
+  <button onclick="startGame('pc')">💻 لابتوب / PC</button>
+</div>
+
+<canvas id="game" width="500" height="500"></canvas>
+
+<script>
+  let deviceType = "pc";
+
+  function startGame(type) {
+    deviceType = type;
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("game").style.display = "block";
+    alert("اخترت: " + deviceType);
+  }
+</script>
+
+</body>
+</html>
